@@ -2,6 +2,7 @@
 
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
+let turn;
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
