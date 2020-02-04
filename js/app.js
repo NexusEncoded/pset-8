@@ -29,3 +29,14 @@ function render() {
 
   render();   // we'll write this later
 }
+
+function takeTurn(e) {
+  let index = squares.findIndex(function(square) {
+    return square === e.target;
+  });
+
+  board[index] = turn;
+  turn = turn === "X" ? "O" : "X";
+
+  render();
+}
