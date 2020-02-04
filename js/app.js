@@ -15,5 +15,9 @@ function init() {
     "", "", ""
   ];
 
+function render() {
+
+  }
+
   render();   // we'll write this later
 }
