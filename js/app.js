@@ -27,8 +27,7 @@ function render() {
     })
   }
 
-  render();   // we'll write this later
-}
+
 
 function takeTurn(e) {
   let index = squares.findIndex(function(square) {
