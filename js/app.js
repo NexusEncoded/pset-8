@@ -28,21 +28,38 @@ function render() {
     squares[index].textContent = mark;    // writes an X or an O on board
   });
 
-  message.textContent = `Turn: ${turn}`;
+
+  message.textContent = win ? `${win} wins!` : `Turn: ${turn}`;
+
 }
 
 
 
 function takeTurn(e) {
-  let index = squares.findIndex(function(square) {
-    return square === e.target;
-  });
+  if (!win) {
+   let index = squares.findIndex(function(square) {
+     return square === e.target;
+   });
 
-  board[index] = turn;
-  turn = turn === "X" ? "O" : "X";
+   board[index] = turn;
+   turn = turn === "X" ? "O" : "X";
+   win = getWinner();
 
-  render();
+   render();
+ }
+
 }
+
+const winningConditions = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
+];
 
 function getWinner() {
   let winner = null;
