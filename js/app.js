@@ -18,7 +18,8 @@ function init() {
     "", "", ""
   ];
   turn = "X";
-
+  win = null;
+  
   render();
 }
 
