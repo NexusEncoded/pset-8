@@ -19,7 +19,7 @@ function init() {
   ];
   turn = "X";
   win = null;
-  
+
   render();
 }
 
@@ -42,4 +42,20 @@ function takeTurn(e) {
   turn = turn === "X" ? "O" : "X";
 
   render();
+}
+
+function getWinner() {
+  let winner = null;
+
+  winningConditions.forEach(function(condition, index) {
+    if (
+      board[condition[0]] &&
+      board[condition[0]] === board[condition[1]] &&
+      board[condition[1]] === board[condition[2]]
+    ) {
+      winner = board[condition[0]];
+    }
+  });
+
+  return winner;
 }
